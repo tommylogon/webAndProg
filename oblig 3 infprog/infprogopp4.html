@@ -39,7 +39,7 @@
 				}
 				else{
 					guessesLeft(ctx,guess,rightWord,randomOrd,wrong);
-					seeIfRight(rightWord);
+					seeIfRight(rightWord,ctx);
 				}
 				document.getElementById("txtWord").value = "";
 			}
@@ -64,12 +64,12 @@
 						wrong[j](ctx);
 						j++;
 						document.getElementById("utskrift").innerHTML += guess ;
-						lost(j,rightWord);
+						lost(j,rightWord,ctx);
 						
 					}
 				
 			}
-			function seeIfRight(rightWord){
+			function seeIfRight(rightWord,ctx){
 			var pointsToWin=0;
 				for(var t=0;t<=rightWord.length-1;t++){
 					if(foundGlobal[t]==rightWord[t]){
@@ -78,15 +78,22 @@
 					}
 				}
 					if(pointsToWin==rightWord.length){
-						alert("Du klarte det!");
+						ctx.fillText("YOU WIN!",52,37);
+					
+					ctx.strokeStyle="red";
+					ctx.stroke();
 					}
 			}
+			
 			function gameOver(ctx){
-				
+					ctx.fillText("GAME OVER",52,37);
+					
+					ctx.strokeStyle="red";
+					ctx.stroke();
 			}
-			function lost (j,rightWord){
+			function lost (j,rightWord,ctx){
 				if(j==10){
-					alert("du tapte");
+					gameOver(ctx);
 				}
 			}
 			function wrongAnswer(wrong,ctx){
