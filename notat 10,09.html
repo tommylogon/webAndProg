@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+		window.onload = oppstart;
+		
+            function oppstart(){
+				document.getElementById("selNavn").onchange = test;
+			}
+			function test(){
+				document.getElementById("utskrift").innerHTML = document.getElementById("selNavn").value;
+			}
+        </script>
+    </head>
+    <body>
+        <select id="selNavn">
+			<option>Ole</option>
+			<option>Per</option>
+			<option>Knut</option>
+		</select>
+		<button id="btnTest">test</button>
+		<p id="utskrift">aaaaa</p>
+    </body>
+</html>

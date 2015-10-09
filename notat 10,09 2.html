@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+			window.onload = oppstart;
+		
+            function oppstart(){
+				document.getElementById("btnTest").onclick = test;
+			}
+			function test(){
+					if(document.getElementById("rbValg1").checked===true){
+						alert("Hei");
+					}
+					else if(document.getElementById("rbValg2").checked===true){
+						alert("hadet");
+					}
+					else if(document.getElementById("rbValg3").checked===true){
+						alert("blæææ");
+					}
+					else{
+						alert("u whot m8?");
+					}
+			}
+        </script>
+    </head>
+    <body>
+        <input type="radio" id="rbValg1" name="farger">rød </input>
+		<input type="radio" id="rbValg2" name="farger">grønn </input>
+		<input type="radio" id="rbValg3" name="farger">blå </input>
+		<button id="btnTest">test</button>
+		<p id="utskrift">aaaaa</p>
+    </body>
+</html>

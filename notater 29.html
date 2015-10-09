@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Testside</title>
+<script>
+	
+function skrivHilsen(hilsningsord) {
+	alert(hilsningsord + " du!");
+	//50 til...
+}
+
+
+
+function minsteTall(tall1,tall2,tall3) {
+	if(tall1 < tall2) {
+		return tall1;
+	}
+	else {
+		return tall2;
+	}
+}
+
+
+	
+	
+window.onload = oppstart;
+ 
+function oppstart() {
+	document.getElementById("knapp2").onclick = doit2;
+
+}
+
+
+
+function doit2() {
+
+	skrivHilsen("halllo");
+	var svar = minsteTall(5,minsteTall(2,minsteTall(3,5)));
+	alert(svar);
+	
+	var res = celsiusToFarenheit(250);
+	alert(res);
+	
+	
+	
+	
+}
+
+
+
+	
+	
+</script>
+
+<style>
+</style>
+</head>
+<body>
+	
+   
+   Tekst: <input type="text" id="txtTekst" />
+   <button id="knapp" type="button">DoIt</button>
+  <button id="knapp2" type="button">DoIt2</button>
+   <p id="utskrift"></p>
+</body>
+</html>
+
+

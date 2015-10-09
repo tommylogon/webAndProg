@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+            <title> oppgaver tommy</title>
+		<meta charset="utf-8">
+		<style>
+			#lblOut8{
+				display:inline-block; 
+				width:100px;
+				border:dotted black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Tommy slaatbraaten, informasjonssysetmer 2015</h1>
+		<p></p>
+		<div>
+			<h1>Oppgave 1</h1>
+			<div id="op1"></div>
+		</div>
+		<div>
+			<h1>Oppgave 2</h1>
+			<p>Jeg elsker og progge hilsen <span id="navn"></span></p>
+		</div>
+		<div>
+			<h1>Oppgave 3</h1>
+			<form name="myForm">
+				<input type="text" name="inputbox" value=""</input><p>
+				<input type="button" name="button" value="click" onClick="textResults(this.form)"</input>
+			</form>
+		</div>
+		<div>
+			<h1>Oppgave 4</h1>
+			<form name="telleForm">
+				<input type="text" id="box1" name="inputbox" value=""</input><p>
+				<input type="text" id="box2" name="inputbox" value=""</input><p>
+				<input type="button" name="button" value="click" onClick="telleResults(this.form)"</input>
+			</form>
+		</div>
+		<div>
+			<h1>Oppgave 5</h1>
+                        <input type="text" id="txtBrukernavn5" placeholder="Bruker Navn"</input> <br />
+                        <input type="password" id="txtPassord5" placeholder="passord"</input>
+                        <button id="btnSubmit5">Submit</button>
+                        <p id="txtOut5"></p>
+		</div>
+		<div>
+			<h1>Oppgave 6</h1>
+						<input type="text" id="txtBrukernavn6" placeholder="Bruker Navn"</input> <br />
+                        <input type="password" id="txtPassord6" placeholder="passord"</input>
+						<input type="password" id="txtPassord7" placeholder="passord igjen"</input>
+                        <button id="btnSubmit6">Submit</button>
+                        <p id="txtOut6"></p>
+		</div>
+		<div>
+			<h1>Oppgave 7</h1>
+						<input type="text" id="txtBrukernavn7" placeholder="Bruker Navn"</input> <br />
+                        <input type="password" id="txtPassord8" placeholder="passord"</input>
+						<input type="password" id="txtPassord9" placeholder="passord igjen"</input><br />
+						<input type="number"   id="txtAlder7" placeholder="alder" </input> <br />
+                        <button id="btnSubmit7">Submit</button>
+                        <p id="txtOut7"></p>
+		</div>
+		<div>
+			<h1>Oppgave 8</h1>
+						<input type="number" id="txtSize" placeholder="Size"> </input>
+						<input type="radio" id="rbSize1" name="sizeType1">bit</input>
+						<input type="radio" id="rbSize2" name="sizeType1">Byte</input>
+						<span id="selectHere1"> </span>
+						
+						<button id="btnCalc" >calculate</button> <br />
+						
+						<label id="lblOut8" >number</label>
+						<input type="radio" id="rbSize3" name="sizeType2">bit</input>
+						<input type="radio" id="rbSize4" name="sizeType2">Byte</input>
+						<span id="selectHere2"> </span>
+						
+						
+		</div>
+		<div>
+			<h1>Oppgave 9</h1>
+		</div>
+		<div>
+			<h1>Oppgave 10</h1>
+		</div>
+		<script>
+                    window.onload = oppstart;
+                
+		function oppstart(){
+            document.getElementById("btnSubmit5").onclick = nyBruker1;
+			document.getElementById("btnSubmit6").onclick = nyBruker2;
+			document.getElementById("btnSubmit7").onclick = nyBruker3;
+			document.getElementById("rbSize1").onchange = sizeType;
+			document.getElementById("rbSize2").onchange = sizeType;
+			document.getElementById("rbSize3").onchange = sizeType;
+			document.getElementById("rbSize4").onchange = sizeType;
+			document.getElementById("btnCalc").onclick= downloadCal;
+			
+        }        
+		var op1 = document.getElementById("op1");
+		op1.innerHTML = "Hei jeg heter tommy og jeg skal bli nerd";
+		
+		var navn = document.getElementById("navn");
+		navn.innerHTML = "Tommy";
+		
+		function textResults(form){
+			var testVar = form.inputbox.value;
+			alert("Hei: " + testVar);
+		}
+		function telleResults(form){
+			var tall1 = document.getElementById('box1').value;
+			var tall2 = document.getElementById('box2').value;
+                        
+                        var tallplus = +tall1 + +tall2;
+                        var tallminu = tall1 - tall2;
+                        var tallgang = tall1 * tall2;
+                        var talldele = tall1 / tall2; 
+			alert(tallplus);
+                        alert(tallminu);
+                        alert(tallgang);
+                        alert(talldele);
+		}
+				
+				function nyBruker1(){
+                    var brukerNavn = document.getElementById("txtBrukernavn5").value;
+                    var passord1 = document.getElementById("txtPassord5").value;
+                    var melding;
+                    if(brukerNavn != false  && passord1 != false){
+			
+							melding = "Takk for registrering";
+						
+                    }
+					else{
+						melding = "du gjorde noe feil";
+					}
+                    document.getElementById("txtOut5").innerHTML = melding;
+                }
+                
+				function nyBruker2(){
+                    var brukerNavn = document.getElementById("txtBrukernavn6").value;
+                    var passord1 = document.getElementById("txtPassord6").value;
+					var passord2 = document.getElementById("txtPassord7").value;
+                    var melding;
+                    if(brukerNavn != false  && passord1 != false){
+						if(passord1 == passord2){
+							melding = "Takk for registrering";
+						}
+                        else{
+							melding = "du har skrevet feil passord"; 
+						}
+                    }
+					else{
+						melding = "du gjorde noe feil";
+					}
+                    document.getElementById("txtOut6").innerHTML = melding;
+                }
+				function nyBruker3(){
+                    var brukerNavn = document.getElementById("txtBrukernavn7").value;
+                    var passord1 = document.getElementById("txtPassord8").value;
+					var passord2 = document.getElementById("txtPassord9").value;
+					var alder 	 = parseInt(document.getElementById("txtAlder7").value)
+                    var melding;
+                    if(brukerNavn != false  && passord1 != false){
+						if(passord1 == passord2){
+							
+							if(alder > 17 ){
+								melding="Takk for registrering"
+							}
+							else{
+								melding = "barn skal ikke se porno";
+							}
+						}
+                        else{
+							melding = "du har skrevet feil passord"; 
+						}
+                    }
+					else{
+						melding = "du gjorde noe feil";
+					}
+                    document.getElementById("txtOut7").innerHTML = melding;
+                }
+				function sizeType (){
+					var size1 = document.getElementById("rbSize1").checked;
+					var size2 = document.getElementById("rbSize2").checked;
+					var size3 = document.getElementById("rbSize3").checked;
+					var size4 = document.getElementById("rbSize4").checked;
+					var parent1 = document.getElementById("selectHere1");
+					var parent2 = document.getElementById("selectHere2")
+					var child1 = document.getElementById("selSize1");
+					var child2 = document.getElementById("selSize2");
+					
+					if(child1 != null && parent1 != null && child2 != null && parent2 != null){
+						child1.parentNode.removeChild(child1);
+						child2.parentNode.removeChild(child2);
+						}
+					
+					if(size1 === true){
+						
+						
+					
+						var sizeTypes = document.createElement("SELECT");
+						sizeTypes.setAttribute("id", "selSize1");
+						document.getElementById("selectHere1").appendChild(sizeTypes);
+					
+						var z = document.createElement("option");
+						z.setAttribute("value", "1024");
+						var t = document.createTextNode("KiloBit");
+						z.appendChild(t);
+						document.getElementById("selSize1").appendChild(z);
+					
+						var z = document.createElement("option");
+						z.setAttribute("value", "1048576");
+						var t = document.createTextNode("MegaBit");
+						z.appendChild(t);
+						document.getElementById("selSize1").appendChild(z);
+					
+						var z = document.createElement("option");
+						z.setAttribute("value", "1073741824");
+						var t = document.createTextNode("GigaBit");
+						z.appendChild(t);
+						document.getElementById("selSize1").appendChild(z);
+					
+					}
+					
+					else if (size2 === true){
+						
+						
+						var sizeTypes = document.createElement("SELECT");
+						sizeTypes.setAttribute("id", "selSize1");
+						document.getElementById("selectHere1").appendChild(sizeTypes);
+					
+						var z = document.createElement("option");
+						z.setAttribute("value", "1024");
+						var t = document.createTextNode("KiloByte");
+						z.appendChild(t);
+						document.getElementById("selSize1").appendChild(z);
+					
+						var z = document.createElement("option");
+						z.setAttribute("value", "1048576");
+						var t = document.createTextNode("MegaByte");
+						z.appendChild(t);
+						document.getElementById("selSize1").appendChild(z);
+					
+						var z = document.createElement("option");
+						z.setAttribute("value", "1073741824");
+						var t = document.createTextNode("GigaByte");
+						z.appendChild(t);
+						document.getElementById("selSize1").appendChild(z);
+						
+					}
+					
+				
+				
+					if(size3 === true){
+						
+						
+					
+						var sizeTypes = document.createElement("SELECT");
+						sizeTypes.setAttribute("id", "selSize2");
+						document.getElementById("selectHere2").appendChild(sizeTypes);
+					
+						var z = document.createElement("option");
+						z.setAttribute("value", "1024");
+						var t = document.createTextNode("KiloBit");
+						z.appendChild(t);
+						document.getElementById("selSize2").appendChild(z);
+					
+						var z = document.createElement("option");
+						z.setAttribute("value", "1048576");
+						var t = document.createTextNode("MegaBit");
+						z.appendChild(t);
+						document.getElementById("selSize2").appendChild(z);
+					
+						var z = document.createElement("option");
+						z.setAttribute("value", "1073741824");
+						var t = document.createTextNode("GigaBit");
+						z.appendChild(t);
+						document.getElementById("selSize2").appendChild(z);
+					
+					}
+					
+					else if (size4 === true){
+						
+						
+						var sizeTypes = document.createElement("SELECT");
+						sizeTypes.setAttribute("id", "selSize2");
+						document.getElementById("selectHere2").appendChild(sizeTypes);
+					
+						var z = document.createElement("option");
+						z.setAttribute("value", "1024");
+						var t = document.createTextNode("KiloByte");
+						z.appendChild(t);
+						document.getElementById("selSize2").appendChild(z);
+					
+						var z = document.createElement("option");
+						z.setAttribute("value", "1048576");
+						var t = document.createTextNode("MegaByte");
+						z.appendChild(t);
+						document.getElementById("selSize2").appendChild(z);
+					
+						var z = document.createElement("option");
+						z.setAttribute("value", "1073741824");
+						var t = document.createTextNode("GigaByte");
+						z.appendChild(t);
+						document.getElementById("selSize2").appendChild(z);
+						
+					}
+					
+				}
+				function downloadCal(){
+					var downSize = parseInt(document.getElementById("txtSize").value);
+					var sizeMulti = parseInt(document.getElementById("selSize1").value);
+					var output;
+					var output = downSize * sizeMulti;
+					
+					document.getElementById("lblOut8").innerHTML = output;
+				}
+		</script>
+	</body>
+</html>
